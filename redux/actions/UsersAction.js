@@ -5,17 +5,19 @@ export const isLoading = () => ({
   type: types.LOADING,
 })
 
-export const fetchUserSuccess = () => async dispatch => {
+export const fetchUserSuccess = (server) => async (dispatch) => {
   try {
     dispatch({
       type: types.LOADING,
     })
-    const {data} = await UsersService.fetch()
+    UsersService.setServer(server)
+    const {data} = await UsersService.fetch(server)
     dispatch({
       type: types.FETCH_USERS_SUCCESS,
       payload: data
     })
   } catch (e) {
+    console.log(e)
     dispatch({
       type: types.FETCH_USERS_FAILURE,
     })

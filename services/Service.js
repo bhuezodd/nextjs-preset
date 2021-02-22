@@ -21,5 +21,4 @@ export default class Service extends BaseResource {
   destroy(id, config) {
     return this.delete(`/${id}`, config)
   }
-
 }
