@@ -14,7 +14,7 @@ export default class BaseResource {
   }
 
   post(url, options, config) {
-    return axios.get(`${this.api}${url}`, options, {...config, headers: {'Authorization': `Bearer ${this.token}}`}})
+    return axios.post(`${this.api}${url}`, options, {...config, headers: {'Authorization': `Bearer ${this.token}}`}})
   }
 
   put(url, options, config) {

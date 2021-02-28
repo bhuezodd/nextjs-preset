@@ -1,14 +1,10 @@
-import Head from 'next/head'
-import PButton from '../components/PButton'
-import Default from '../layouts/Default'
+import PButton from '@components/PButton'
+import Default from '@layouts/Default'
 
 export default function Home() {
   return (
     <>
-      <Head>
-        <title>Home</title>
-      </Head>
-      <Default>
+      <Default name="Home">
         <div className="relative w-full h-full">
           <div className="absolute z-10 flex justify-center w-full top-40">
             <PButton>

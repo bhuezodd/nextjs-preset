@@ -1,8 +1,10 @@
+import Head from 'next/head'
 import {container, navbar, title, item_navbar, active} from '../styles/Home.module.css'
 import Link from 'next/link'
 import {useRouter} from 'next/router'
 
 const Default = (props) => {
+  const {name} = props
   const router = useRouter();
   const items = [
     {
@@ -10,17 +12,16 @@ const Default = (props) => {
       name: 'Home',
     },
     {
-      key: '/test',
-      name: 'Test',
-    },
-    {
-      key: '/redux',
-      name: 'Redux',
+      key: '/login',
+      name: 'Login',
     },
   ]
 
   return (
     <div>
+      <Head>
+        <title>{name}</title>
+      </Head>
       <nav className={navbar}>
         <h2 className={title}>
           ToDo

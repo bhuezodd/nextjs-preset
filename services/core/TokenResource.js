@@ -18,6 +18,6 @@ export const getToken = (req) => {
 }
 
 export const setToken = (value) => {
-  const cookies = getCookie(req)
+  const cookies = getCookie()
   cookies.set('token', value)
 }

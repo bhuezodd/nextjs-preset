@@ -1,27 +1,31 @@
 import * as types from '../../redux/types'
 
 const initialState = {
-  users: [],
+  token: null,
+  role: '',
   isLoading: false
 }
 
-export const usersReducer = (state = initialState, action) => {
+export const authReducer = (state = initialState, action) => {
   switch (action.type) {
     case types.LOADING:
       return {
         ...state,
         isLoading: !state.isLoading
       }
-    case types.FETCH_USERS_SUCCESS:
+    case types.SET_TOKEN:
+      console.log(action, 'test')
+      const {token, role} = action.payload
       return {
         ...state,
-        users: action.payload,
+        token: token,
+        role: role,
         isLoading: false
       }
-    case types.FETCH_USERS_FAILURE:
+    case types.LOGOUT:
       return {
         ...state,
-        users: [],
+        token: [],
         isLoading: false
       }
     default:

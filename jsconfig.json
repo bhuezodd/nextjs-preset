@@ -4,9 +4,9 @@
     "target": "es2017",
     "baseUrl": ".",
     "paths": {
-      "@": ["/"],
-      "@/components/*": ["components/*"],
-      "@/layouts/*": ["layouts/*"]
+      "@": ["."],
+      "@components/*": ["components/*"],
+      "@layouts/*": ["layouts/*"]
     }
   },
   "exclude": ["node_modules"]
